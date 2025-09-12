@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pix</title>
+  <title>MySQL的隔离级别和锁机制 | Pix</title>
   
   
   
@@ -49,29 +49,14 @@
 
     <div class="container">
         <div data-pager-shell>
-            <ul class="Index">
-  
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2025/08/25/%E5%85%88%E4%BB%8ESQL%E6%A0%87%E5%87%86%E4%B8%AD%E5%AE%9A%E4%B9%89%E7%9A%84%E5%9B%9B%E7%A7%8D%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E5%BC%80%E5%A7%8B/">MySQL的隔离级别和锁机制</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2025-08-25T12:55:00.000Z" itemprop="datePublished">
-    2025-08-25
-  </time>
-  
-  
-</div>
-
+            <div>
+  <article class='ContentView'>
+    <header class='PageTitle'>
+        <h1>MySQL的隔离级别和锁机制</h1>
     </header>
-    <div>
-      
-        <p><strong>from《Database System Concepts》</strong></p>
+
+    <section>
+      <p><strong>from《Database System Concepts》</strong></p>
 <ul>
 <li><strong>可串行化(serializable):</strong> 通常保证可串行化调度。然而，正如我们将要解释的，一些数据库系统对该隔离性级别的实现在某些情况下允许非可串行化执行。</li>
 <li><strong>可重复读(repeatable read):</strong> 只允许读取已提交数据，而且在一个事务两次读取一个数据项期间，其他事务不得更新该数据。但该事务不要求与其他事务可串行化。例如:当一个事务在查找满足某些条件的数据时，它可能找到一个已提交事务插入的一些数据，但可能找不到该事务插入的其他数据。</li>
@@ -112,53 +97,49 @@
 <h3 id="可串行化-Serializable"><a href="#可串行化-Serializable" class="headerlink" title="可串行化 (Serializable)"></a>可串行化 (Serializable)</h3><p>这是数据库系统的终极目标，其它的隔离级别都是为了并发性能而做的不同程度的妥协，主要通过2PL来实现，其实把可重复读级别下所有select换成select for update，那事务就是可串行化的。</p>
 <h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>作为MySQL的默认隔离级别，可重复读其实已经是最佳实践，对于写偏斜、幻读问题，开发者其实更应该去评估特定事务的执行逻辑，判断是否有非串行化的风险，适时、灵活的使用快照读和当前读，达成性能与正确性的平衡。</p>
 
+
       
-    </div>
+
+    </section>
+    
+      <section class='ArticleMeta'>
+          <div>
+            发布于&nbsp;
+            <time datetime="2025-08-25T12:55:00.000Z" itemprop="datePublished">
+              2025-08-25
+            </time>
+          </div>
+          
+      </section>
+    
+    
+      <section>
+        <div id="disqus_thread"></div>
+        <script>
+          window.disqus_config = function () {
+            this.page.url = window.location.toString()
+            this.page.identifier = window.location.pathname
+          }
+          if (typeof DISQUS === 'undefined') {
+            (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://Pix.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
+          } else {
+            DISQUS.reset({
+                reload: true,
+                config: window.disqus_config
+            })
+          }
+        </script>
+      </section>
+    
 </article>
 
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2023/10/02/hello-world/">Hello World</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2023-10-01T16:00:00.000Z" itemprop="datePublished">
-    2023-10-02
-  </time>
-  
   
 </div>
-
-    </header>
-    <div>
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-</article>
-
-    </li>
-  
-</ul>
-
 
             <footer>
     <div>© 2025 - John Doe </div>
