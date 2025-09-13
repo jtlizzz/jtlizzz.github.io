@@ -110,7 +110,7 @@
 <p>MySQL为了性能上的考虑，对快照读使用的是多版本方案，也就是不加锁，只有当前读和写操作才会加锁，所以可重复读级别并没有完全的解决幻读，参考：</p>
 <p><a target="_blank" rel="noopener" href="https://xiaolincoding.com/mysql/transaction/phantom.html#%E4%BB%80%E4%B9%88%E6%98%AF%E5%B9%BB%E8%AF%BB">MySQL 可重复读隔离级别，完全解决幻读了吗？</a></p>
 <h3 id="可串行化-Serializable"><a href="#可串行化-Serializable" class="headerlink" title="可串行化 (Serializable)"></a>可串行化 (Serializable)</h3><p>这是数据库系统的终极目标，其它的隔离级别都是为了并发性能而做的不同程度的妥协，主要通过2PL来实现，其实把可重复读级别下所有select换成select for update，那事务就是可串行化的。</p>
-<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>作为MySQL的默认隔离级别，可重复读其实已经是最佳实践，对于写偏斜、幻读问题，开发者其实更应该去评估特定事务的执行逻辑，判断是否有非串行化的风险，适时、灵活的使用快照读和当前读，达成性能与正确性的平衡。</p>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>作为MySQL的默认隔离级别，可重复读其实已经是最佳实践，对于写偏斜、幻读问题，开发者其实更应该去评估特定事务的执行逻辑，判断是否有非串行化的风险，适时、灵活的使用快照读和当前读，达成性能与正确性的平衡。  </p>
 
       
     </div>
