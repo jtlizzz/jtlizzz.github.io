@@ -134,15 +134,6 @@ export default defineConfig({
 				cssVariable: "--font-noto-serif-jp"
 			},
 			{
-				name: "Playwrite MX",
-				provider: fontProviders.google(),
-				weights: [100],
-				display: "block",
-				subsets: ["fallback"],
-				fallbacks: ["Apple Chancery", "Segoe Script", "cursive"],
-				cssVariable: "--font-playwrite-mx"
-			},
-			{
 				name: "Maple Mono NF CN",
 				provider: ZeoSevenFonts(),
 				optimizedFallbacks: false,
