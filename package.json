@@ -99,6 +99,13 @@
 		"tsx": "^4.21.0",
 		"unifont": "^0.7.4"
 	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild",
+			"sharp",
+			"swup"
+		]
+	},
 	"lint-staged": {
 		"*.{js,ts,json,jsonc,css,svelte,astro}": [
 			"biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"

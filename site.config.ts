@@ -1,8 +1,8 @@
 import siteConfig from "./src/lib/config";
 
 const config = siteConfig({
-	title: "ThoughtLite",
-	prologue: "If you need a website\nthat loads fast and has great SEO, then Astro is for you.",
+	title: "brewing",
+	prologue: "code is cheap\nshow me the prompt",
 	author: {
 		name: "Your Name",
 		email: "hi@your.mail",
@@ -15,7 +15,7 @@ const config = siteConfig({
 	},
 	timezone: "UTC",
 	i18n: {
-		locales: ["en", "zh-cn", "ja"],
+		locales: ["en", "zh-cn"],
 		defaultLocale: "en"
 	},
 	pagination: {
@@ -23,8 +23,8 @@ const config = siteConfig({
 		jotting: 24
 	},
 	heatmap: {
-		unit: "day",
-		weeks: 20
+		unit: "month",
+		years: 2
 	},
 	feed: {
 		section: "*",
