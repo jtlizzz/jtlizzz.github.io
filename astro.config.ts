@@ -151,11 +151,12 @@ export default defineConfig({
 				cssVariable: "--font-maple-mono-nf-cn"
 			},
 			{
-				name: "The Peak Font Plus",
-				provider: ZeoSevenFonts(),
+				name: "Caveat",
+				provider: fontProviders.google(),
+				// weights: [400, 700],
 				optimizedFallbacks: false,
-				fallbacks: ["Georgia", "STSong", "serif"],
-				cssVariable: "--font-the-peak-font-plus"
+				fallbacks: ["Segoe Script", "Apple Chancery", "cursive"],
+				cssVariable: "--font-caveat"
 			}
 		]
 	}

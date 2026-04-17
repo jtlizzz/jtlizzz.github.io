@@ -221,7 +221,7 @@
 
 	--font-serif: var(--font-noto-serif);
 	--font-mono: var(--font-maple-mono-nf-cn);
-	--font-cursive: "Segoe Script", var(--font-the-peak-font-plus);
+	--font-cursive: var(--font-caveat);
 
 	@keyframes shaky {
 		0% {

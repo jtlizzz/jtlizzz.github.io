@@ -4,9 +4,9 @@ const config = siteConfig({
 	title: "brewing",
 	prologue: "code is cheap\nshow me the prompt",
 	author: {
-		name: "Your Name",
-		email: "hi@your.mail",
-		link: "https://your.website"
+		name: "jtli",
+		email: "jtli.dev@qq.com"
+		// link: "https://your.website"
 	},
 	description: "A modern Astro theme focused on content creation.",
 	copyright: {
@@ -16,7 +16,7 @@ const config = siteConfig({
 	timezone: "UTC",
 	i18n: {
 		locales: ["zh-cn", "en"],
-		defaultLocale: "en"
+		defaultLocale: "zh-cn"
 	},
 	pagination: {
 		note: 15,
