@@ -8,7 +8,7 @@ const config = siteConfig({
 		email: "jtli.dev@qq.com"
 		// link: "https://your.website"
 	},
-	description: "A modern Astro theme focused on content creation.",
+	description: "A personal blog about programming, technology, and life.",
 	copyright: {
 		type: "CC BY-NC-ND 4.0",
 		year: "2025"
